@@ -3,5 +3,8 @@
     <pages>
         <page name='Basic Queues'/>
         <page name='Atomic'/>
+        <page name='NSOperation'/>
+        <page name='Dispatch Group'/>
+        <page name='Semaphore'/>
     </pages>
 </playground>
