@@ -7,7 +7,7 @@ func download(url: URL) -> Data? {
     let semaphore = DispatchSemaphore(value: 0)
     
     URLSession.shared.dataTask(with: url) { (theData, _, _) in
-        print("downloaded \(String(describing: theData))")
+        print("URLSession.downloaded \(String(describing: theData))")
         data = theData
         semaphore.signal()
     }.resume()
@@ -18,6 +18,9 @@ func download(url: URL) -> Data? {
 }
 
 print("About to wait for luke to download")
+
+// We have used a semaphore, like the DispatchGroup, to notify us when the data is downloaded
+// This is turning an asyncrhonous operation into a synchronous operation
 
 let url = URL(string: "https://swapi.co/api/people/1/")!
 if let myData = download(url: url) {
