@@ -46,6 +46,7 @@ import Foundation
 
 // Concurrent Queue
 
+//DispatchQueue defaults to Serial (1 at a time when we create it, so by making it concurrent, we can do multiple things)
 let downloadPhotoQueue = DispatchQueue(label: "MyConcurrentQueue", attributes: .concurrent)
 
 for i in 0...100 {
